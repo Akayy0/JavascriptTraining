@@ -1,0 +1,20 @@
+{
+    "Car1" :{
+        
+        "id": 1,
+        "name": "Ferrari",
+        "CarClass": "S" 
+        
+    },
+    "Car2" :{
+        "id": 2,
+        "name": "Volkswagen",
+        "CarClass": "A"
+    },
+    "Car3":{
+        "id": 3,
+        "name": "Bugatti",
+        "CarClass": "SS"
+    }
+    
+}
