@@ -22,7 +22,11 @@ const carros = `{
 }`
 
 
-console.log(JSON.parse(carros))
+fetch("./carros.json")
+    .then(res => res.json())
 
+    .then(dados => {    
+        console.log(dados.Car1.name)
+    })
 
 
