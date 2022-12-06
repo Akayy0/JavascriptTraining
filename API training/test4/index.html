@@ -1,17 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./index.js"></script>
-    <title>Teste 4</title>
+  <style>
+    /* CSS styles for the carousel */
+    .carousel {
+      width: 500px;
+      height: 300px;
+      margin: auto;
+      overflow: hidden;
+    }
+    .carousel img {
+      width: 500px;
+      height: 300px;
+      float: left;
+    }
+    .carousel-nav {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .carousel-nav button {
+      width: 30px;
+      height: 30px;
+      background-color: lightgrey;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <div class="carousel">
+    <img src="image1.jpg" alt="image1">
+    <img src="image2.jpg" alt="image2">
+    <img src="image3.jpg" alt="image3">
+  </div>
+  <div class="carousel-nav">
+    <button id="prev">&lt;</button>
+    <button id="next">&gt;</button>
+  </div>
+  <script>
+    // JavaScript code for the carousel
+    var currentIndex = 0;
+    var images = document.querySelectorAll(".carousel img");
+    var prevButton = document.querySelector("#prev");
+    var nextButton = document.querySelector("#next");
 
-    <div id="teste">
-        
-    </div>
-    
+    prevButton.addEventListener("click", function() {
+      // Go to previous image
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      }
+      for (var i = 0; i < images.length; i++) {
+        images[i].style.display = "none";
+      }
+      images[currentIndex].style.display = "block";
+    });
+    nextButton.addEventListener("click", function() {
+      // Go to next image
+      currentIndex++;
+      if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+      for (var i = 0; i < images.length; i++) {
+        images[i].style.display = "none";
+      }
+      images[currentIndex].style.display = "block";
+    });
+  </script>
 </body>
 </html>
