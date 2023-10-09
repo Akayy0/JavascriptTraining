@@ -1,16 +1,14 @@
 const lista = document.getElementById('lista');
 const input = document.getElementById('input');
+const submit = document.getElementById('submit');
 
 
 const tarefas = [];
 
-console.log()
 
-const addTask = (e) => {
+submit.addEventListener('click', () => {
 
-    e.preventDefault();
-
-    const tasks = input.value.trim();
+    const tasks = input.value;
 
     tarefas.push(tasks)
 
@@ -18,8 +16,8 @@ const addTask = (e) => {
 
     console.log(tarefas)
 
+})
 
-}
 
 
 
